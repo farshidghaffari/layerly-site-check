@@ -1,5 +1,6 @@
 *
 !sitecheck/
 !sitecheck/**
+!LICENSE
 sitecheck/**/__pycache__/
 sitecheck/**/*.pyc
