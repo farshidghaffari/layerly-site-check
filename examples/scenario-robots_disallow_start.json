@@ -1,0 +1,120 @@
+{
+  "schema_version": "c2.check.v0.4-draft",
+  "is_sample": true,
+  "check_id": "chk_fixture_0001",
+  "status": "failed",
+  "input": {
+    "url": "https://www.example.com/",
+    "normalized_url": "https://www.example.com/",
+    "lang": "en"
+  },
+  "created_at": "2026-10-28T10:00:00Z",
+  "started_at": "2026-10-28T10:00:00Z",
+  "finished_at": "2026-10-28T10:00:00Z",
+  "expires_at": "2026-11-04T10:00:00Z",
+  "limits": {
+    "max_pages": 5,
+    "max_requests": 20,
+    "max_dns_lookups": 30,
+    "request_timeout_ms": 10000,
+    "job_timeout_ms": 60000,
+    "max_body_bytes": 2097152
+  },
+  "coverage": {
+    "site_host": null,
+    "pages_selected": 1,
+    "pages_fetched": 0,
+    "pages_failed": 0,
+    "pages_skipped": 1,
+    "requests_used": 1,
+    "requests_limit": 20,
+    "dns_lookups_used": 1,
+    "dns_lookups_limit": 30,
+    "links_found": 0,
+    "links_checked": 0,
+    "links_not_checked": 0,
+    "links_not_checked_by_reason": {},
+    "robots_txt": "fetched",
+    "robots_origins": [
+      {
+        "origin": "https://www.example.com",
+        "state": "fetched",
+        "http_status": 200,
+        "reason": null
+      }
+    ],
+    "stopped_reason": null,
+    "checks_not_run": []
+  },
+  "pages": [
+    {
+      "url": "https://www.example.com/",
+      "final_url": null,
+      "fetch_status": "skipped",
+      "http_status": null,
+      "redirect_chain": [],
+      "content_type": null,
+      "bytes": null,
+      "fetch_ms": 0,
+      "error_code": "start_page_robots_disallowed",
+      "measured": null,
+      "evidence_ids": [
+        "ev_bda5a162b7a5"
+      ],
+      "fetched_at": "2026-10-28T10:00:00Z",
+      "body_sha256": null
+    }
+  ],
+  "links": [],
+  "findings": [
+    {
+      "finding_id": "fd_01",
+      "rule_id": "robots_txt.disallowed",
+      "page_url": "https://www.example.com/",
+      "severity": "medium",
+      "needs_context": true,
+      "summary": "robots.txt disallows this page for our user agent; it was not requested.",
+      "evidence_ids": [
+        "ev_bda5a162b7a5"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_bda5a162b7a5",
+      "kind": "robots_txt_rule",
+      "url": "https://www.example.com/robots.txt",
+      "locator": "robots.txt line 2",
+      "excerpt": "Disallow: /",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:00Z",
+      "body_sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    }
+  ],
+  "explanation": {
+    "status": "not_available",
+    "lang": "en",
+    "items": [],
+    "reason": null,
+    "is_test": false
+  },
+  "errors": [
+    {
+      "code": "start_page_robots_disallowed",
+      "url": "https://www.example.com/",
+      "message": "robots.txt disallows this path."
+    }
+  ],
+  "request_log": [
+    {
+      "seq": 1,
+      "purpose": "robots",
+      "method": "GET",
+      "url": "https://www.example.com/robots.txt",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    }
+  ],
+  "disclaimer": "Automated check of raw HTML for up to 5 pages of one site. Not a ranking, traffic or backlink measurement. Items not checked are listed in coverage.",
+  "sample_note": "SAMPLE ONLY - generated from local fixtures with a fake resolver and transport; no real network request was made."
+}

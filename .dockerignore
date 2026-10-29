@@ -1,0 +1,5 @@
+*
+!sitecheck/
+!sitecheck/**
+sitecheck/**/__pycache__/
+sitecheck/**/*.pyc

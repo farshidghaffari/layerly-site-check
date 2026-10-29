@@ -1,0 +1,727 @@
+{
+  "schema_version": "c2.check.v0.4-draft",
+  "is_sample": true,
+  "check_id": "chk_sample_0001",
+  "status": "partial",
+  "input": {
+    "url": "http://www.example.com",
+    "normalized_url": "http://www.example.com/",
+    "lang": "en"
+  },
+  "created_at": "2026-10-28T10:00:00Z",
+  "started_at": "2026-10-28T10:00:00Z",
+  "finished_at": "2026-10-28T10:00:15Z",
+  "expires_at": "2026-11-04T10:00:15Z",
+  "limits": {
+    "max_pages": 5,
+    "max_requests": 20,
+    "max_dns_lookups": 30,
+    "request_timeout_ms": 10000,
+    "job_timeout_ms": 60000,
+    "max_body_bytes": 2097152
+  },
+  "coverage": {
+    "site_host": "www.example.com",
+    "pages_selected": 5,
+    "pages_fetched": 3,
+    "pages_failed": 1,
+    "pages_skipped": 1,
+    "requests_used": 12,
+    "requests_limit": 20,
+    "dns_lookups_used": 1,
+    "dns_lookups_limit": 30,
+    "links_found": 5,
+    "links_checked": 4,
+    "links_not_checked": 1,
+    "links_not_checked_by_reason": {
+      "external_not_checked": 1
+    },
+    "robots_txt": "fetched",
+    "robots_origins": [
+      {
+        "origin": "http://www.example.com",
+        "state": "fetched",
+        "http_status": 200,
+        "reason": null
+      },
+      {
+        "origin": "https://www.example.com",
+        "state": "fetched",
+        "http_status": 200,
+        "reason": null
+      }
+    ],
+    "stopped_reason": null,
+    "checks_not_run": [
+      {
+        "page_url": "https://www.example.com/contact/",
+        "reason": "fetch_timeout"
+      },
+      {
+        "page_url": "https://www.example.com/private/",
+        "reason": "robots_disallowed"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "url": "http://www.example.com/",
+      "final_url": "https://www.example.com/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "url": "http://www.example.com/",
+          "http_status": 301,
+          "location": "https://www.example.com/"
+        },
+        {
+          "url": "https://www.example.com/",
+          "http_status": 200,
+          "location": null
+        }
+      ],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 1289,
+      "fetch_ms": 2050,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Example Industrial Pumps | Home",
+          "length": 31
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 2,
+          "values": [
+            "Industrial Pumps",
+            "Service Across the Region"
+          ]
+        },
+        "canonical": {
+          "values": [
+            "https://www.example.com/"
+          ],
+          "is_self": true,
+          "invalid": 0,
+          "target_checked": true,
+          "target_status": 200
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 2,
+          "valid": 1,
+          "invalid": 1,
+          "types": [
+            "Organization"
+          ]
+        },
+        "text_chars": 490,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_e9d41cf5686e",
+        "ev_843a6c28603d",
+        "ev_5eee05cfd75c",
+        "ev_236e68681485"
+      ],
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "8612826369d1f719b1adf08c4655ad9452cac91c820c3fef492eceb9ba8dc561"
+    },
+    {
+      "url": "https://www.example.com/services/",
+      "final_url": "https://www.example.com/services/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 645,
+      "fetch_ms": 500,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Services | Example Industrial Pumps",
+          "length": 35
+        },
+        "meta_description": {
+          "value": null,
+          "length": 0
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "Our Services"
+          ]
+        },
+        "canonical": {
+          "values": [
+            "https://www.example.com/services"
+          ],
+          "is_self": false,
+          "invalid": 0,
+          "target_checked": false,
+          "target_status": null
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 399,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_b55b13e8f6ef",
+        "ev_cc4b5afd595a",
+        "ev_86e293d3b69b"
+      ],
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "50aba779766b1cb6a776ec806522c9c7cc8781cf10d087a682cdf337772ecad0"
+    },
+    {
+      "url": "https://www.example.com/contact/",
+      "final_url": null,
+      "fetch_status": "error",
+      "http_status": null,
+      "redirect_chain": [],
+      "content_type": null,
+      "bytes": null,
+      "fetch_ms": 0,
+      "error_code": "fetch_timeout",
+      "measured": null,
+      "evidence_ids": [],
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": null
+    },
+    {
+      "url": "https://www.example.com/private/",
+      "final_url": null,
+      "fetch_status": "skipped",
+      "http_status": null,
+      "redirect_chain": [],
+      "content_type": null,
+      "bytes": null,
+      "fetch_ms": 0,
+      "error_code": "robots_disallowed",
+      "measured": null,
+      "evidence_ids": [
+        "ev_6c0c36e9f459"
+      ],
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": null
+    },
+    {
+      "url": "https://www.example.com/about/",
+      "final_url": "https://www.example.com/about/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 412,
+      "fetch_ms": 50,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "About",
+          "length": 5
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "About us"
+          ]
+        },
+        "canonical": {
+          "values": [
+            "https://www.example.com/about/"
+          ],
+          "is_self": true,
+          "invalid": 0,
+          "target_checked": true,
+          "target_status": 200
+        },
+        "robots": {
+          "meta": "noindex, follow",
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 35,
+        "forms_found": 1
+      },
+      "evidence_ids": [
+        "ev_0d051b56fd90",
+        "ev_105eb7703c90",
+        "ev_219d04891415",
+        "ev_41205ba03789",
+        "ev_c1b2e7bd8961"
+      ],
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": "1486233117ec96a17422736706291b6033240baea323f6dc59cf8be46cf54999"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.example.com/old-catalog/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "broken",
+      "http_status": 404,
+      "evidence_id": "ev_e62a350a146b",
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/privacy/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/blog/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "redirect",
+      "http_status": 301,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/files/catalog.pdf",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://example.org/partner",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "external_not_checked"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "fd_01",
+      "rule_id": "robots_txt.disallowed",
+      "page_url": "https://www.example.com/private/",
+      "severity": "medium",
+      "needs_context": true,
+      "summary": "robots.txt disallows this page for our user agent; it was not requested.",
+      "evidence_ids": [
+        "ev_6c0c36e9f459"
+      ]
+    },
+    {
+      "finding_id": "fd_02",
+      "rule_id": "links.broken",
+      "page_url": "https://www.example.com/",
+      "severity": "medium",
+      "needs_context": false,
+      "summary": "Tested link returned HTTP 404.",
+      "evidence_ids": [
+        "ev_e62a350a146b"
+      ]
+    },
+    {
+      "finding_id": "fd_03",
+      "rule_id": "http.redirect_chain",
+      "page_url": "http://www.example.com/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "Redirect chain has 1 permanent hop(s).",
+      "evidence_ids": [
+        "ev_e9d41cf5686e"
+      ]
+    },
+    {
+      "finding_id": "fd_04",
+      "rule_id": "h1.count",
+      "page_url": "https://www.example.com/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "Page has 2 H1 elements.",
+      "evidence_ids": [
+        "ev_843a6c28603d"
+      ]
+    },
+    {
+      "finding_id": "fd_05",
+      "rule_id": "jsonld.invalid",
+      "page_url": "https://www.example.com/",
+      "severity": "medium",
+      "needs_context": false,
+      "summary": "A JSON-LD block is not valid JSON.",
+      "evidence_ids": [
+        "ev_236e68681485"
+      ]
+    },
+    {
+      "finding_id": "fd_06",
+      "rule_id": "meta_description.missing",
+      "page_url": "https://www.example.com/services/",
+      "severity": "low",
+      "needs_context": false,
+      "summary": "No meta description found in raw HTML.",
+      "evidence_ids": [
+        "ev_b55b13e8f6ef"
+      ]
+    },
+    {
+      "finding_id": "fd_07",
+      "rule_id": "canonical.points_elsewhere",
+      "page_url": "https://www.example.com/services/",
+      "severity": "medium",
+      "needs_context": true,
+      "summary": "Canonical points to a different URL.",
+      "evidence_ids": [
+        "ev_cc4b5afd595a"
+      ]
+    },
+    {
+      "finding_id": "fd_08",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/services/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_86e293d3b69b"
+      ]
+    },
+    {
+      "finding_id": "fd_09",
+      "rule_id": "title.length",
+      "page_url": "https://www.example.com/about/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "Title is 5 characters long.",
+      "evidence_ids": [
+        "ev_0d051b56fd90"
+      ]
+    },
+    {
+      "finding_id": "fd_10",
+      "rule_id": "robots.noindex",
+      "page_url": "https://www.example.com/about/",
+      "severity": "medium",
+      "needs_context": true,
+      "summary": "Page carries noindex in meta robots.",
+      "evidence_ids": [
+        "ev_219d04891415"
+      ]
+    },
+    {
+      "finding_id": "fd_11",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/about/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_41205ba03789"
+      ]
+    },
+    {
+      "finding_id": "fd_12",
+      "rule_id": "content.low_text",
+      "page_url": "https://www.example.com/about/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "Raw HTML has 35 visible text characters; this alone does not prove the page is broken or JS-only.",
+      "evidence_ids": [
+        "ev_c1b2e7bd8961"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_6c0c36e9f459",
+      "kind": "robots_txt_rule",
+      "url": "https://www.example.com/robots.txt",
+      "locator": "robots.txt line 2",
+      "excerpt": "Disallow: /private/",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "8380aca0750b4c4f2527d11e2e7e019344f7f432017a263a15d6e3fe29bf8bb7"
+    },
+    {
+      "evidence_id": "ev_e62a350a146b",
+      "kind": "link_check",
+      "url": "https://www.example.com/old-catalog/",
+      "locator": "a[href] on https://www.example.com/",
+      "excerpt": "HEAD -> 404",
+      "http_status": 404,
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": null
+    },
+    {
+      "evidence_id": "ev_e9d41cf5686e",
+      "kind": "http_redirect",
+      "url": "http://www.example.com/",
+      "locator": "header:Location",
+      "excerpt": "301 http://www.example.com/ -> https://www.example.com/",
+      "http_status": 301,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": null
+    },
+    {
+      "evidence_id": "ev_843a6c28603d",
+      "kind": "html_element",
+      "url": "https://www.example.com/",
+      "locator": "h1 (2 matches)",
+      "excerpt": "Industrial Pumps | Service Across the Region",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "8612826369d1f719b1adf08c4655ad9452cac91c820c3fef492eceb9ba8dc561"
+    },
+    {
+      "evidence_id": "ev_5eee05cfd75c",
+      "kind": "html_element",
+      "url": "https://www.example.com/",
+      "locator": "link[rel=canonical] (line 1)",
+      "excerpt": "https://www.example.com/",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "8612826369d1f719b1adf08c4655ad9452cac91c820c3fef492eceb9ba8dc561"
+    },
+    {
+      "evidence_id": "ev_236e68681485",
+      "kind": "jsonld_parse_error",
+      "url": "https://www.example.com/",
+      "locator": "script[type=application/ld+json] (line 1)",
+      "excerpt": "Invalid JSON; block starts: {\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",}",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "8612826369d1f719b1adf08c4655ad9452cac91c820c3fef492eceb9ba8dc561"
+    },
+    {
+      "evidence_id": "ev_b55b13e8f6ef",
+      "kind": "html_absent",
+      "url": "https://www.example.com/services/",
+      "locator": "head > meta[name=description]",
+      "excerpt": "(no non-empty meta description)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "50aba779766b1cb6a776ec806522c9c7cc8781cf10d087a682cdf337772ecad0"
+    },
+    {
+      "evidence_id": "ev_cc4b5afd595a",
+      "kind": "html_element",
+      "url": "https://www.example.com/services/",
+      "locator": "link[rel=canonical] (line 1)",
+      "excerpt": "https://www.example.com/services",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "50aba779766b1cb6a776ec806522c9c7cc8781cf10d087a682cdf337772ecad0"
+    },
+    {
+      "evidence_id": "ev_86e293d3b69b",
+      "kind": "html_absent",
+      "url": "https://www.example.com/services/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "50aba779766b1cb6a776ec806522c9c7cc8781cf10d087a682cdf337772ecad0"
+    },
+    {
+      "evidence_id": "ev_0d051b56fd90",
+      "kind": "html_element",
+      "url": "https://www.example.com/about/",
+      "locator": "title (line 1)",
+      "excerpt": "About",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": "1486233117ec96a17422736706291b6033240baea323f6dc59cf8be46cf54999"
+    },
+    {
+      "evidence_id": "ev_105eb7703c90",
+      "kind": "html_element",
+      "url": "https://www.example.com/about/",
+      "locator": "link[rel=canonical] (line 1)",
+      "excerpt": "https://www.example.com/about/",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": "1486233117ec96a17422736706291b6033240baea323f6dc59cf8be46cf54999"
+    },
+    {
+      "evidence_id": "ev_219d04891415",
+      "kind": "html_element",
+      "url": "https://www.example.com/about/",
+      "locator": "meta[name=robots]",
+      "excerpt": "noindex, follow",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": "1486233117ec96a17422736706291b6033240baea323f6dc59cf8be46cf54999"
+    },
+    {
+      "evidence_id": "ev_41205ba03789",
+      "kind": "html_absent",
+      "url": "https://www.example.com/about/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": "1486233117ec96a17422736706291b6033240baea323f6dc59cf8be46cf54999"
+    },
+    {
+      "evidence_id": "ev_c1b2e7bd8961",
+      "kind": "text_stats",
+      "url": "https://www.example.com/about/",
+      "locator": "visible text in raw HTML",
+      "excerpt": "35 characters",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:13Z",
+      "body_sha256": "1486233117ec96a17422736706291b6033240baea323f6dc59cf8be46cf54999"
+    }
+  ],
+  "explanation": {
+    "status": "not_available",
+    "lang": "en",
+    "items": [],
+    "reason": null,
+    "is_test": false
+  },
+  "errors": [
+    {
+      "code": "fetch_timeout",
+      "url": "https://www.example.com/contact/",
+      "message": "No response within the time limit."
+    },
+    {
+      "code": "robots_disallowed",
+      "url": "https://www.example.com/private/",
+      "message": "robots.txt disallows this path."
+    }
+  ],
+  "request_log": [
+    {
+      "seq": 1,
+      "purpose": "robots",
+      "method": "GET",
+      "url": "http://www.example.com/robots.txt",
+      "connect_ip": "93.184.215.14",
+      "result": 301
+    },
+    {
+      "seq": 2,
+      "purpose": "redirect",
+      "method": "GET",
+      "url": "https://www.example.com/robots.txt",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 3,
+      "purpose": "page",
+      "method": "GET",
+      "url": "http://www.example.com/",
+      "connect_ip": "93.184.215.14",
+      "result": 301
+    },
+    {
+      "seq": 4,
+      "purpose": "robots",
+      "method": "GET",
+      "url": "https://www.example.com/robots.txt",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 5,
+      "purpose": "redirect",
+      "method": "GET",
+      "url": "https://www.example.com/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 6,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/services/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 7,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/contact/",
+      "connect_ip": "93.184.215.14",
+      "result": "fetch_timeout"
+    },
+    {
+      "seq": 8,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/about/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 9,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/old-catalog/",
+      "connect_ip": "93.184.215.14",
+      "result": 404
+    },
+    {
+      "seq": 10,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/privacy/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 11,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/blog/",
+      "connect_ip": "93.184.215.14",
+      "result": 301
+    },
+    {
+      "seq": 12,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/files/catalog.pdf",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    }
+  ],
+  "disclaimer": "Automated check of raw HTML for up to 5 pages of one site. Not a ranking, traffic or backlink measurement. Items not checked are listed in coverage.",
+  "sample_note": "SAMPLE ONLY - generated from local fixtures with a fake resolver and transport; no real network request was made."
+}

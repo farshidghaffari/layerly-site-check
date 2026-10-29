@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "layerly-site-check"
+version = "0.1.0"
+description = "Bounded, evidence-based checks of five public HTML pages. No model API."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "Farshid Ghaffari"}]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Homepage = "https://layerly.net/"
+Repository = "https://github.com/farshidghaffari/layerly-site-check"
+Issues = "https://github.com/farshidghaffari/layerly-site-check/issues"
+
+[project.scripts]
+layerly-check = "sitecheck.cli:main"
+
+[tool.setuptools]
+packages = ["sitecheck"]
+
+[tool.setuptools.package-data]
+sitecheck = ["*.json"]

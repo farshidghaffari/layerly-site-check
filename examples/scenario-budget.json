@@ -1,0 +1,1030 @@
+{
+  "schema_version": "c2.check.v0.4-draft",
+  "is_sample": true,
+  "check_id": "chk_fixture_0001",
+  "status": "partial",
+  "input": {
+    "url": "https://www.example.com/",
+    "normalized_url": "https://www.example.com/",
+    "lang": "en"
+  },
+  "created_at": "2026-10-28T10:00:00Z",
+  "started_at": "2026-10-28T10:00:00Z",
+  "finished_at": "2026-10-28T10:00:10Z",
+  "expires_at": "2026-11-04T10:00:10Z",
+  "limits": {
+    "max_pages": 5,
+    "max_requests": 20,
+    "max_dns_lookups": 30,
+    "request_timeout_ms": 10000,
+    "job_timeout_ms": 60000,
+    "max_body_bytes": 2097152
+  },
+  "coverage": {
+    "site_host": "www.example.com",
+    "pages_selected": 5,
+    "pages_fetched": 5,
+    "pages_failed": 0,
+    "pages_skipped": 0,
+    "requests_used": 20,
+    "requests_limit": 20,
+    "dns_lookups_used": 1,
+    "dns_lookups_limit": 30,
+    "links_found": 36,
+    "links_checked": 14,
+    "links_not_checked": 22,
+    "links_not_checked_by_reason": {
+      "request_budget_exhausted": 22
+    },
+    "robots_txt": "absent",
+    "robots_origins": [
+      {
+        "origin": "https://www.example.com",
+        "state": "absent",
+        "http_status": 404,
+        "reason": null
+      }
+    ],
+    "stopped_reason": "request_budget_exhausted",
+    "checks_not_run": []
+  },
+  "pages": [
+    {
+      "url": "https://www.example.com/",
+      "final_url": "https://www.example.com/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 1511,
+      "fetch_ms": 550,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Example Industrial Pumps",
+          "length": 24
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "Industrial Pumps"
+          ]
+        },
+        "canonical": {
+          "values": [],
+          "is_self": false,
+          "invalid": 0,
+          "target_checked": false,
+          "target_status": null
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 498,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_4203476ff22d",
+        "ev_965f7fbbefa8"
+      ],
+      "fetched_at": "2026-10-28T10:00:00Z",
+      "body_sha256": "fcfa1415dd99166cbb8a381ff673a153ce151055ac011b6f2092d54c8018ac51"
+    },
+    {
+      "url": "https://www.example.com/p0/",
+      "final_url": "https://www.example.com/p0/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 613,
+      "fetch_ms": 500,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Page 0 of the example site",
+          "length": 26
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "Industrial Pumps"
+          ]
+        },
+        "canonical": {
+          "values": [],
+          "is_self": false,
+          "invalid": 0,
+          "target_checked": false,
+          "target_status": null
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 387,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_4b18305da02f",
+        "ev_70d6127355f3"
+      ],
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "0ea750cfc542cd5502383ef0d1e52e8307fa30c97bb71445370c11171a4f89a2"
+    },
+    {
+      "url": "https://www.example.com/p1/",
+      "final_url": "https://www.example.com/p1/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 613,
+      "fetch_ms": 500,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Page 1 of the example site",
+          "length": 26
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "Industrial Pumps"
+          ]
+        },
+        "canonical": {
+          "values": [],
+          "is_self": false,
+          "invalid": 0,
+          "target_checked": false,
+          "target_status": null
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 387,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_9f4008bb23a8",
+        "ev_77bf63219eb1"
+      ],
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "0fdca37c0d6b8a99833cccd26f4e6fe909753e4dea0fc038464d15fec3c3bff3"
+    },
+    {
+      "url": "https://www.example.com/p2/",
+      "final_url": "https://www.example.com/p2/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 613,
+      "fetch_ms": 499,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Page 2 of the example site",
+          "length": 26
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "Industrial Pumps"
+          ]
+        },
+        "canonical": {
+          "values": [],
+          "is_self": false,
+          "invalid": 0,
+          "target_checked": false,
+          "target_status": null
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 387,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_20d271c123f0",
+        "ev_de8b662a10af"
+      ],
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "7076d93d1e473fb7afab4cf87818b8a4d28f6ba3cb4c1cac4437b5b094a146c5"
+    },
+    {
+      "url": "https://www.example.com/p3/",
+      "final_url": "https://www.example.com/p3/",
+      "fetch_status": "ok",
+      "http_status": 200,
+      "redirect_chain": [],
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 613,
+      "fetch_ms": 500,
+      "error_code": null,
+      "measured": {
+        "title": {
+          "value": "Page 3 of the example site",
+          "length": 26
+        },
+        "meta_description": {
+          "value": "Industrial pump supply and service.",
+          "length": 35
+        },
+        "h1": {
+          "count": 1,
+          "values": [
+            "Industrial Pumps"
+          ]
+        },
+        "canonical": {
+          "values": [],
+          "is_self": false,
+          "invalid": 0,
+          "target_checked": false,
+          "target_status": null
+        },
+        "robots": {
+          "meta": null,
+          "x_robots_tag": null,
+          "robots_txt_allowed": true
+        },
+        "json_ld": {
+          "blocks": 0,
+          "valid": 0,
+          "invalid": 0,
+          "types": []
+        },
+        "text_chars": 387,
+        "forms_found": 0
+      },
+      "evidence_ids": [
+        "ev_b8a7e0db6f9e",
+        "ev_aac386114ff0"
+      ],
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "00408686c7ad4153535d1e7ac24f678876a3255d3f2e2ce940e31e70c0f41048"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.example.com/p4/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p5/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p6/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p7/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p8/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p9/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p10/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p11/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p12/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p13/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p14/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p15/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p16/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p17/",
+      "source_page": "https://www.example.com/",
+      "method": "HEAD",
+      "status": "ok",
+      "http_status": 200,
+      "evidence_id": null,
+      "reason": null
+    },
+    {
+      "url": "https://www.example.com/p18/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p19/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p20/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p21/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p22/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p23/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p24/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p25/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p26/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p27/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p28/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p29/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p30/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p31/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p32/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p33/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p34/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p35/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p36/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p37/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p38/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    },
+    {
+      "url": "https://www.example.com/p39/",
+      "source_page": "https://www.example.com/",
+      "method": null,
+      "status": "not_checked",
+      "http_status": null,
+      "evidence_id": null,
+      "reason": "request_budget_exhausted"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "fd_01",
+      "rule_id": "canonical.missing",
+      "page_url": "https://www.example.com/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "No canonical link found.",
+      "evidence_ids": [
+        "ev_4203476ff22d"
+      ]
+    },
+    {
+      "finding_id": "fd_02",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_965f7fbbefa8"
+      ]
+    },
+    {
+      "finding_id": "fd_03",
+      "rule_id": "canonical.missing",
+      "page_url": "https://www.example.com/p0/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "No canonical link found.",
+      "evidence_ids": [
+        "ev_4b18305da02f"
+      ]
+    },
+    {
+      "finding_id": "fd_04",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/p0/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_70d6127355f3"
+      ]
+    },
+    {
+      "finding_id": "fd_05",
+      "rule_id": "canonical.missing",
+      "page_url": "https://www.example.com/p1/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "No canonical link found.",
+      "evidence_ids": [
+        "ev_9f4008bb23a8"
+      ]
+    },
+    {
+      "finding_id": "fd_06",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/p1/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_77bf63219eb1"
+      ]
+    },
+    {
+      "finding_id": "fd_07",
+      "rule_id": "canonical.missing",
+      "page_url": "https://www.example.com/p2/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "No canonical link found.",
+      "evidence_ids": [
+        "ev_20d271c123f0"
+      ]
+    },
+    {
+      "finding_id": "fd_08",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/p2/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_de8b662a10af"
+      ]
+    },
+    {
+      "finding_id": "fd_09",
+      "rule_id": "canonical.missing",
+      "page_url": "https://www.example.com/p3/",
+      "severity": "info",
+      "needs_context": true,
+      "summary": "No canonical link found.",
+      "evidence_ids": [
+        "ev_b8a7e0db6f9e"
+      ]
+    },
+    {
+      "finding_id": "fd_10",
+      "rule_id": "jsonld.none",
+      "page_url": "https://www.example.com/p3/",
+      "severity": "info",
+      "needs_context": false,
+      "summary": "No JSON-LD block found.",
+      "evidence_ids": [
+        "ev_aac386114ff0"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_4203476ff22d",
+      "kind": "html_absent",
+      "url": "https://www.example.com/",
+      "locator": "head > link[rel=canonical]",
+      "excerpt": "(no canonical link)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:00Z",
+      "body_sha256": "fcfa1415dd99166cbb8a381ff673a153ce151055ac011b6f2092d54c8018ac51"
+    },
+    {
+      "evidence_id": "ev_965f7fbbefa8",
+      "kind": "html_absent",
+      "url": "https://www.example.com/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:00Z",
+      "body_sha256": "fcfa1415dd99166cbb8a381ff673a153ce151055ac011b6f2092d54c8018ac51"
+    },
+    {
+      "evidence_id": "ev_4b18305da02f",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p0/",
+      "locator": "head > link[rel=canonical]",
+      "excerpt": "(no canonical link)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "0ea750cfc542cd5502383ef0d1e52e8307fa30c97bb71445370c11171a4f89a2"
+    },
+    {
+      "evidence_id": "ev_70d6127355f3",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p0/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "0ea750cfc542cd5502383ef0d1e52e8307fa30c97bb71445370c11171a4f89a2"
+    },
+    {
+      "evidence_id": "ev_9f4008bb23a8",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p1/",
+      "locator": "head > link[rel=canonical]",
+      "excerpt": "(no canonical link)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "0fdca37c0d6b8a99833cccd26f4e6fe909753e4dea0fc038464d15fec3c3bff3"
+    },
+    {
+      "evidence_id": "ev_77bf63219eb1",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p1/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:01Z",
+      "body_sha256": "0fdca37c0d6b8a99833cccd26f4e6fe909753e4dea0fc038464d15fec3c3bff3"
+    },
+    {
+      "evidence_id": "ev_20d271c123f0",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p2/",
+      "locator": "head > link[rel=canonical]",
+      "excerpt": "(no canonical link)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "7076d93d1e473fb7afab4cf87818b8a4d28f6ba3cb4c1cac4437b5b094a146c5"
+    },
+    {
+      "evidence_id": "ev_de8b662a10af",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p2/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "7076d93d1e473fb7afab4cf87818b8a4d28f6ba3cb4c1cac4437b5b094a146c5"
+    },
+    {
+      "evidence_id": "ev_b8a7e0db6f9e",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p3/",
+      "locator": "head > link[rel=canonical]",
+      "excerpt": "(no canonical link)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "00408686c7ad4153535d1e7ac24f678876a3255d3f2e2ce940e31e70c0f41048"
+    },
+    {
+      "evidence_id": "ev_aac386114ff0",
+      "kind": "html_absent",
+      "url": "https://www.example.com/p3/",
+      "locator": "script[type=application/ld+json]",
+      "excerpt": "(no JSON-LD block)",
+      "http_status": 200,
+      "fetched_at": "2026-10-28T10:00:02Z",
+      "body_sha256": "00408686c7ad4153535d1e7ac24f678876a3255d3f2e2ce940e31e70c0f41048"
+    }
+  ],
+  "explanation": {
+    "status": "not_available",
+    "lang": "en",
+    "items": [],
+    "reason": null,
+    "is_test": false
+  },
+  "errors": [],
+  "request_log": [
+    {
+      "seq": 1,
+      "purpose": "robots",
+      "method": "GET",
+      "url": "https://www.example.com/robots.txt",
+      "connect_ip": "93.184.215.14",
+      "result": 404
+    },
+    {
+      "seq": 2,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 3,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/p0/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 4,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/p1/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 5,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/p2/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 6,
+      "purpose": "page",
+      "method": "GET",
+      "url": "https://www.example.com/p3/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 7,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p4/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 8,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p5/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 9,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p6/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 10,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p7/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 11,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p8/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 12,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p9/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 13,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p10/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 14,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p11/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 15,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p12/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 16,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p13/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 17,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p14/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 18,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p15/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 19,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p16/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    },
+    {
+      "seq": 20,
+      "purpose": "link",
+      "method": "HEAD",
+      "url": "https://www.example.com/p17/",
+      "connect_ip": "93.184.215.14",
+      "result": 200
+    }
+  ],
+  "disclaimer": "Automated check of raw HTML for up to 5 pages of one site. Not a ranking, traffic or backlink measurement. Items not checked are listed in coverage.",
+  "sample_note": "SAMPLE ONLY - generated from local fixtures with a fake resolver and transport; no real network request was made."
+}

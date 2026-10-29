@@ -1,0 +1,24 @@
+name: Tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Regression tests (fixtures and loopback only)
+        run: python -m unittest discover -s tests -v
+      - name: Install and run offline demo
+        run: |
+          python -m pip install .
+          layerly-check demo --out sample.json
+          layerly-check validate sample.json
