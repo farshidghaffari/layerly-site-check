@@ -40,7 +40,7 @@ python -m sitecheck check https://your-authorized-domain.example/ --live --out r
 python -m sitecheck validate report.json
 ```
 
-Replace the example domain. This contacts the target website and DNS under the checker's limits. It selects up to five HTML pages, with at most twenty HTTP attempts including supporting requests. Robots restrictions apply. It is not an entire-site audit.
+Replace the example domain. This contacts the target website and DNS under the checker's limits. By default it selects up to five HTML pages, with at most twenty HTTP attempts including supporting requests. For a separately agreed larger scope, add `--max-pages 100`; this enables recursive same-host discovery with at most 400 HTTP attempts and a soft 600-second job timer. Use the actual limits and coverage in the report, not an assumed whole-site scope. Robots restrictions apply. It is not an entire-site audit.
 
 Review the report for sensitive URLs, excerpts and diagnostic addresses before sharing it with an assistant or anyone else. The CLI does not automatically upload, encrypt or delete the file.
 

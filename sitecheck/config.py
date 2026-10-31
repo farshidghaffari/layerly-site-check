@@ -2,7 +2,8 @@
 from dataclasses import dataclass
 
 SCHEMA_VERSION = "c2.check.v0.4-draft"
-USER_AGENT = "LayerlySiteCheck/0.1"
+EXTENDED_SCHEMA_VERSION = "layerly.check.v0.5-draft"
+USER_AGENT = "LayerlySiteCheck/0.2"
 ROBOTS_PRODUCT_TOKEN = "layerlysitecheck"  # matched case-insensitively in robots.txt
 
 

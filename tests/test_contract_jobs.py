@@ -70,7 +70,7 @@ class Contract(unittest.TestCase):
     def test_no_llm_sdk_network_or_key_in_code(self):
         allowed = {"base64", "secrets", "urllib.parse", "json", "re", "os", "tempfile", "ipaddress", "socket",
                    "hashlib", "zlib", "dataclasses", "html.parser", "http.client", "ssl", "time", "datetime",
-                   "argparse", "sys", "string"}
+                   "argparse", "sys", "string", "collections"}
         for f in PKG.glob("*.py"):
             tree = ast.parse(f.read_text(encoding="utf-8"))
             for node in ast.walk(tree):
