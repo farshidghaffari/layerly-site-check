@@ -1,6 +1,6 @@
 # Layerly Site Check
 
-**A small, inspectable website checker. Five pages. Evidence behind every observation. No model API.**
+**A small, inspectable website checker. Five pages by default, up to 100 on request. Evidence behind every observation. No model API.**
 
 [Try the hosted checker](https://layerly.net/website-check/) · [Sample report](examples/sample-report.json) · [فارسی](README.fa.md)
 
@@ -40,6 +40,21 @@ The optional [Layerly SEO Basics skill](skills/layerly-seo-basics/SKILL.md) help
 Start with the offline demo, then give your assistant the skill and the generated report. It can also interpret an existing report without running code. A repository link alone does not grant execution or account access. The checker still makes no model API calls; your chosen assistant's capabilities and charges are separate.
 
 See the [step-by-step guide and copyable prompts](docs/AI-REVIEW.md). The skill does not automatically edit websites, send reports or expand the crawl.
+
+## Opt in to a larger local check
+
+```bash
+python -m sitecheck check https://your-company.example/ --live --max-pages 100 --out report.json
+python -m sitecheck validate report.json
+```
+
+`--max-pages` accepts 1 to 100. The default stays at five pages. Above five, discovery follows same-host HTML links breadth-first, including links found on deeper pages. It does not guarantee finding every URL, render JavaScript or read sitemap URLs as crawl seeds.
+
+The local CLI scales its HTTP budget to `max(20, 4 * max_pages)` and its soft job timer to `max(60, 6 * max_pages)` seconds. At 100 pages these are 400 HTTP attempts and 600 seconds. The per-host interval remains 0.5 seconds, the DNS cap 30, and the response-size, robots, IP, redirect and TLS controls remain in place. The time limit or request budget can end a check before the page cap is reached.
+
+The larger mode emits `layerly.check.v0.5-draft`, defined in [the extended schema](sitecheck/report-extended.schema.json). The five-page default and fixture examples retain `c2.check.v0.4-draft`. Consumers must select the matching schema; the bundled `validate` command supports both. `page_limit_reached` identifies discovered HTML pages excluded by the cap and makes the extended report partial. It is not a broken-link finding.
+
+This option is for the standalone CLI. It does not raise limits on Layerly's separately operated hosted checker.
 
 ## What it checks
 

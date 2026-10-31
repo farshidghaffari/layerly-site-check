@@ -55,8 +55,9 @@ def _check(v, s, path, errs):
                 _check(item, s["items"], f"{path}[{i}]", errs)
 
 
-def load_schema():
-    with open(SCHEMA_PATH, encoding="utf-8") as f:
+def load_schema(version=None):
+    path = os.path.join(os.path.dirname(__file__), 'report-extended.schema.json') if version == 'layerly.check.v0.5-draft' else SCHEMA_PATH
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -91,6 +92,10 @@ def integrity_errors(r):
         errs.append("a budget was exceeded")
     if c["pages_selected"] != len(r["pages"]):
         errs.append("pages_selected differs from pages")
+    if c['pages_selected'] > r['limits']['max_pages']:
+        errs.append('selected pages exceed configured page limit')
+    if c['requests_limit'] != r['limits']['max_requests'] or c['dns_lookups_limit'] != r['limits']['max_dns_lookups']:
+        errs.append('coverage and configured budgets differ')
     if c["pages_fetched"] + c["pages_failed"] + c["pages_skipped"] != c["pages_selected"]:
         errs.append("page counts do not add up")
     if c["links_found"] != len(r["links"]) or c["links_checked"] + c["links_not_checked"] != c["links_found"]:
@@ -132,7 +137,7 @@ def integrity_errors(r):
 
 def validate_report(report):
     errs = []
-    _check(report, load_schema(), "$", errs)
+    _check(report, load_schema(report.get('schema_version')), "$", errs)
     if not errs:
         errs.extend(integrity_errors(report))
     return errs

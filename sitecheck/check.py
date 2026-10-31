@@ -2,9 +2,10 @@
 rules with evidence, and JSON matching the bundled report schema."""
 import base64
 import secrets
+from collections import deque
 from urllib.parse import urljoin, urlsplit, parse_qsl, urlencode
 
-from .config import Limits, NON_HTML_EXTENSIONS, PAGE_CONTENT_TYPES, SCHEMA_VERSION, TRACKING_PARAMS
+from .config import Limits, NON_HTML_EXTENSIONS, PAGE_CONTENT_TYPES, SCHEMA_VERSION, EXTENDED_SCHEMA_VERSION, TRACKING_PARAMS
 from .errors import InputRejected
 from .evidence import EvidenceStore, clean_text, sha256_hex
 from .fetcher import SafeFetcher
@@ -69,8 +70,11 @@ def _is_html_path(url):
 
 class CheckRun:
     def __init__(self, url, *, resolver, transport, clock, limits=Limits(), explain=True, lang="en",
-                 check_id=None, is_sample=False, budgeted_resolver=None):
+                 check_id=None, is_sample=False, budgeted_resolver=None, recursive=False):
         self.input_url, self.limits, self.clock = url, limits, clock
+        if recursive and (not 1 <= limits.max_pages <= 100 or not 1 <= limits.max_requests <= 400):
+            raise ValueError('Recursive checks require 1..100 pages and 1..400 HTTP attempts.')
+        self.recursive = recursive
         self.explain, self.lang, self.is_sample = explain, lang, is_sample
         self.check_id = check_id or new_check_id()
         self.dns = budgeted_resolver or BudgetedResolver(resolver, limits.max_dns_lookups)
@@ -107,6 +111,9 @@ class CheckRun:
             parsed = [start]
             for u in selected:
                 parsed.append(self._fetch_page(u, allowed_hosts={site_host}, is_start=False))
+            if self.recursive:
+                # Reuse fetched first-level pages, then discover deeper pages breadth-first.
+                parsed = self._crawl_recursive(parsed, site_host)
             self._check_links(parsed, site_host)
             for page, ex in parsed:
                 if ex is not None:
@@ -117,6 +124,43 @@ class CheckRun:
                                    any(l["status"] == "not_checked" for l in self.links)):
             status = "partial"
         return self._report(status, nurl, site_host, created_at, started_at, finished_at)
+
+    def _crawl_recursive(self, parsed, site_host):
+        pending = deque()
+        seen = {u for p, _ in parsed for u in (p['url'], p['final_url']) if u}
+        scanned = 0
+        excluded = False
+        while scanned < len(parsed) or pending:
+            while scanned < len(parsed):
+                p, ex = parsed[scanned]
+                scanned += 1
+                if ex is None:
+                    continue
+                for href, _ in ex.links:
+                    c = _clean_link(p['final_url'], href)
+                    if not c or c[1] or urlsplit(c[0]).hostname != site_host or not _is_html_path(c[0]) or c[0] in seen:
+                        continue
+                    # Bound the frontier as well as actual page attempts.
+                    if len(parsed) + len(pending) >= self.limits.max_pages:
+                        excluded = True
+                        continue
+                    seen.add(c[0])
+                    pending.append(c[0])
+            if self.stop_reasons:
+                for u in pending:
+                    self.not_run.append({'page_url':u,'reason':self.stop_reasons[0]})
+                break
+            if not pending:
+                break
+            u = pending.popleft()
+            if any(u in (p['url'], p['final_url']) for p, _ in parsed):
+                continue
+            result = self._fetch_page(u, allowed_hosts={site_host}, is_start=False)
+            parsed.append(result)
+            seen.update(x for x in (result[0]['url'],result[0]['final_url']) if x)
+        if excluded and 'page_limit_reached' not in self.stop_reasons:
+            self.stop_reasons.append('page_limit_reached')
+        return parsed
 
     # ------------------------------------------------------------------
     def _fetch_page(self, url, allowed_hosts, is_start):
@@ -315,7 +359,7 @@ class CheckRun:
         explanation = {"status": "not_available" if self.explain else "disabled", "lang": self.lang, "items": [],
                        "reason": None, "is_test": False}
         report = {
-            "schema_version": SCHEMA_VERSION,
+            "schema_version": EXTENDED_SCHEMA_VERSION if self.recursive else SCHEMA_VERSION,
             "is_sample": self.is_sample,
             "check_id": self.check_id,
             "status": status,
@@ -335,7 +379,7 @@ class CheckRun:
             "explanation": explanation,
             "errors": self.errors,
             "request_log": self.fetcher.request_log,
-            "disclaimer": DISCLAIMER,
+            "disclaimer": DISCLAIMER.replace('up to 5 pages', f'up to {self.limits.max_pages} pages'),
         }
         if self.is_sample:
             report["sample_note"] = "SAMPLE ONLY - generated from local fixtures with a fake resolver and transport; no real network request was made."

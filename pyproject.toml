@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "layerly-site-check"
-version = "0.1.0"
-description = "Bounded, evidence-based checks of five public HTML pages. No model API."
+version = "0.2.0"
+description = "Bounded, evidence-based checks of up to 100 public HTML pages, five by default. No model API."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
