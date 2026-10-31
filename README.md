@@ -33,6 +33,14 @@ python -m sitecheck check https://your-company.example/ --live --out report.json
 
 Replace the example address. Without `--live`, the command refuses to make requests. Optionally install the local package with `python -m pip install .` and use `layerly-check` instead of `python -m sitecheck`.
 
+## Use the AI review skill
+
+The optional [Layerly SEO Basics skill](skills/layerly-seo-basics/SKILL.md) helps an AI assistant interpret the JSON report, distinguish observations from defects, and propose fixes tied to evidence.
+
+Start with the offline demo, then give your assistant the skill and the generated report. It can also interpret an existing report without running code. A repository link alone does not grant execution or account access. The checker still makes no model API calls; your chosen assistant's capabilities and charges are separate.
+
+See the [step-by-step guide and copyable prompts](docs/AI-REVIEW.md). The skill does not automatically edit websites, send reports or expand the crawl.
+
 ## What it checks
 
 - Titles, descriptions and H1s.
